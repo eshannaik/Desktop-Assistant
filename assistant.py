@@ -115,6 +115,10 @@ def ts(result1):
 		speak("Opening stackoverflow")
 		w.open("stackoverflow.com")
 
+	elif "open pinterest" in result1 :
+		speak("Opening pinterest")
+		w.open("pinterest.com")
+
 	elif "open wikipedia" in result1:
 		speak("Opening Wikipedia")
 		w.open("wikipedia.com")
@@ -139,6 +143,10 @@ def ts(result1):
 	elif "open steam" in result1 :
 		speak("Opening Steam")
 		os.startfile("D:/Games/Steam/steam.exe")
+
+	elif "instructions" in result1:
+		speak("Opening instructions")
+		os.startfile("instructions.txt")
 
 	elif "my microphones" in result1 or "my micrphone" in result1 :
 		speak("Here are the list of microphones")
@@ -171,6 +179,13 @@ def ts(result1):
 
 	elif "i love you" in result1 :
 		speak("awwwww")
+
+
+	# contact me
+
+	elif "contact your maker" in result1 or "contact eshan" in result1 or "who is eshan" in result1:
+		speak("Here are all the ways to contact my owner")
+		w.open("https://github.com/eshannaik")
 
 # A greeting
 def greeting():
