@@ -66,6 +66,15 @@ def ts(result1):
 	elif "how are you" in result1 :
 		speak("i am doing well. kinda bored though")
 
+	elif "who created you" in result1:
+		speak("I was created by eshan as a mini project")
+
+	elif "who are you" in result1:
+		speak("I am a virtual assistant made by eshan")
+
+	elif "who am i" in result1:
+		speak("If your talking your most probably a human")
+
 	elif "search for" in result1 or "search" in result1 or "google" in result1 :
 		word = result1.replace("search for","")
 		word = result1.replace("google","")
@@ -138,14 +147,24 @@ def ts(result1):
 	elif "jokes" in result1 or "joke" in result1 :
 		speak(pyjokes.get_joke())
 
+	elif "dont listen" in result1 or "stop listening" in result1:
+		speak("For how long do you want me to stop listening")
+		a= int(listen())
+		time.sleep(a)
+		print(a)
+
 	elif "exit" in result1 or "goodbye" in result1 or "bye" in result1 or "good night" in result1:
 		speak("see ya later")
 		exit()
 
+	elif "shutdown system" in result1:
+		speak("Shutting down system")
+		subprocess.call('shutdown/p/f')
+
 	# for fun
 
 	elif "will you be my girlfriend" in result1 or "will you be my gf" in result1 :
-		speak("I'll need some time")
+		speak("hmmmmmmmmmmmmmmmm I'll need some time")
 
 	elif "will you be my boyfriend" in result1 or "will you be my bf" in result1 :
 		speak("ahhhhhhhhhhhhhhhhhhhh, im a female")
