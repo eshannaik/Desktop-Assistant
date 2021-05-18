@@ -26,7 +26,8 @@ ________________________________________________________________________________
     Can open calculator,notepad and steam by saying "open _______ ".
     Can tell a joke by saying "joke" or "jokes".
     Lists out the microphones that your system has by saying "my microphones".
-    You can also stop the virtual assistant from listening and shutdown your system using the assistant by saying "stop listening" or "don't listen".
+    You can also stop the virtual assistant from listening by saying "stop listening" or "don't listen".
+    You can shutdown your system using the assistant by saying "shutdown system".
     The project can also give you the top 10 urls of a google search by saying "search for","search" or "google".
     
 #### More features will be added with time.
