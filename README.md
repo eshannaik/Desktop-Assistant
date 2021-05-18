@@ -2,6 +2,7 @@
 
 #### The purpose of this project is to make a Desktop Assistant that can help a person while on his computer.
 #### Please change any of the file paths based on your system when downloading this project.
+#### To run this program open your console and run using "python assistant.py"
 
 ____________________________________________________________________________________________________________________________________________
 #### The librabries used are -
@@ -29,6 +30,7 @@ ________________________________________________________________________________
     You can also stop the virtual assistant from listening by saying "stop listening" or "don't listen".
     You can shutdown your system using the assistant by saying "shutdown system".
     The project can also give you the top 10 urls of a google search by saying "search for","search" or "google".
+    To close the assistant say "exit".
     
 #### More features will be added with time.
 
