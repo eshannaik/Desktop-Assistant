@@ -3,6 +3,7 @@
 #### The purpose of this project is to make a Desktop Assistant that can help a person while on his computer.
 #### Please change any of the file paths based on your system when downloading this project.
 
+____________________________________________________________________________________________________________________________________________
 #### The librabries used are -
     speech_recognition 
     pyttsx3 
@@ -13,9 +14,11 @@
     os 
     googlesearch 
     pyjokes 
-    
+
+________________________________________________________________________________________________________________________________________________
 #### The features of this assistant are (please say any sentence containing the respective keywords for the feature you are looking for) -
     You can also view these instructions from the virtual assistant by saying "instructions".
+    To contact me say contact your maker.
     It can tell current time and date by saying "time" and "date" respectively.
     Responds to a few messages like "how are you","hello", "who are you",etc.
     Opens google,youtube,spotify,whatsapp web,facebook,quora,stackoverflow,wikipedia,pinterest by saying "open __________ " .
