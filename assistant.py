@@ -74,6 +74,10 @@ def ts(result1):
 		search_google(word)
 		speak("Here are some of the results")
 
+	elif "open google" in result1:
+		speak("Opening Google Chrome")
+		w.open("google.com")
+
 	elif "open youtube" in result1 :
 		speak("Opening youtube")
 		w.open("youtube.com")
@@ -141,7 +145,7 @@ def ts(result1):
 	# for fun
 
 	elif "will you be my girlfriend" in result1 or "will you be my gf" in result1 :
-		speak("Yes, i would love too!")
+		speak("I'll need some time")
 
 	elif "will you be my boyfriend" in result1 or "will you be my bf" in result1 :
 		speak("ahhhhhhhhhhhhhhhhhhhh, im a female")
