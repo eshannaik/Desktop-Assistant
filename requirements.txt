@@ -6,3 +6,4 @@ pip install google
 pip install pyjokes
 pip install winshell
 pip install pyowm 
+pip install urllib3
