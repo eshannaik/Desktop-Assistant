@@ -15,6 +15,8 @@ import winshell #empty recycle bin
 import pyowm # weather
 import smtplib #send email
 import time as ti # to stop the virtual assistant from listening
+from urllib.request import urlopen #for news
+import json
 
 # global top
 # top = Tk()
@@ -161,13 +163,13 @@ def ts(result1):
 	elif "jokes" in result1 or "joke" in result1 :
 		speak(pyjokes.get_joke())
 
-	elif "what is todays weather" in result1 or "weather" in result1 :
+	elif "what is today's weather" in result1 or "weather" in result1 :
 		speak("Weather of which place")
 		location = l()
 		speak("Getting weather for ")
 		speak(location)
 
-		api_key = '32 digit code'
+		api_key = '32 bit key'
 		openmap = pyowm.OWM(api_key)
 		wm = openmap.weather_manager()
 		lo = wm.weather_at_place(location)
@@ -175,7 +177,7 @@ def ts(result1):
 
 		speak("the weather is printed on the cmd")
 
-		speak("Do you want me to read out the weather")
+		speak("Do you want me to read out the weather yes or no")
 		x = l()
 
 		temp = data.temperature(unit = "celsius")
@@ -206,6 +208,28 @@ def ts(result1):
 			print(e)
 			speak("Could not send email")
 
+	elif "news" in result1:
+		jsonObj = urlopen('https://newsapi.org/v1/articles?source=the-times-of-india&sortBy=top&apiKey=fc80999b95fc479c9ddf006f4d852d11')
+		data = json.load(jsonObj)
+		i=1
+
+		speak("do you want me to read out the news yes or no")
+		x=l()
+
+		speak("here are some top news from the times of india")
+		print('''=============== TIMES OF INDIA ============'''+ '\n')
+		
+		try:		 
+			for item in data['articles']:
+				print(str(i) + '. ' + item['title'] + '\n')
+				print(item['description'] + '\n')
+				if x == "yes"
+					speak(str(i) + '. ' + item['title'] + '\n')
+				i += 1
+		except Exception as e:
+			print(str(e))
+			
+
 	elif "don't listen" in result1 or "stop listening" in result1 or "send a mail" in result1:
 		speak("For how many seconds do you want me to stop listening")
 		a = int(l())
@@ -230,13 +254,13 @@ def ts(result1):
 	elif "i love you" in result1 :
 		speak("awwwww")
 
-
 	# contact me
-
 	elif "contact your maker" in result1 or "contact eshan" in result1 or "who is eshan" in result1:
 		speak("Here are all the ways to contact my owner")
 		w.open("https://github.com/eshannaik")
 
+
+#listening
 def l():
 	with my_mic as s:
 			print("I am listening")
@@ -251,7 +275,6 @@ def l():
 		print("Request Failed; {0}".format(e))
 
 	return query
-
 
 
 # A greeting
@@ -269,11 +292,11 @@ def greeting():
 # Greeting
 def wishme():
 	global name,engine
-	engine.say("Please input your name")
+	engine.say("Hey what is your name")
 	engine.runAndWait()
-	name = input("Enter your name : ")
+	name = l()
 	name = name.lower()
-	engine.say("Hello"+name)
+	engine.say("Nice to meet you"+name)
 	engine.runAndWait()
 
 #Speaks	
