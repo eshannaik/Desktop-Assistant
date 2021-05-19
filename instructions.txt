@@ -1,5 +1,6 @@
 INSTRUCTIONS
 
+Please wait for the "Im listening" in the cmd before talking.
 
 It can tell current time and date by saying "time" and "date" respectively.
 Responds to a few messages like "how are you","hello", "who are you",etc.
