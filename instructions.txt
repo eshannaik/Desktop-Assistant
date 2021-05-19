@@ -5,10 +5,20 @@ It can tell current time and date by saying "time" and "date" respectively.
 Responds to a few messages like "how are you","hello", "who are you",etc.
 Opens google,youtube,spotify,whatsapp web,facebook,quora,stackoverflow,wikipedia,pinterest by saying "open __________ " .
 Finds the location of a place using google maps by saying " where is ________ "
-Can open calculator,notepad and steam by saying "open _______ ".
+Can open calculator,notepad and steam by saying "open _______ ". (change location of steam.exe in line 146)
 Can tell a joke by saying "joke" or "jokes".
+You can open camera by saying "open camera.
+Can empty recycle bin by saying "empty recycle bin".
+Check weather by saying "what is todays weather" or "weather".(please add your API key at line 170)
+Send a mail by saying "send mail". (Please change line 311 to your mail address)
 Lists out the microphones that your system has by saying "my microphones".
 You can also stop the virtual assistant from listening by saying "stop listening" or "don't listen".
 You can shutdown your system using the assistant by saying "shutdown system".
 The project can also give you the top 10 urls of a google search by saying "search for","search" or "google"
 To close the assistant say "exit".
+
+
+To get your API key for the weather go to https://openweathermap.org/ and create an account.
+Click on API on the top navigation bar.
+Click API doc for Current Weather Data.
+Click API key under by city name in the first box to get the API key.

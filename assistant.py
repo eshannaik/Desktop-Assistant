@@ -1,3 +1,6 @@
+# Virtual Assistant Violet
+
+
 import speech_recognition as sr # access the microphone
 import pyttsx3 # convert text to speech
 from tkinter import * # GUI
@@ -8,6 +11,10 @@ import subprocess #call system processes
 import os # call non system processes
 from googlesearch import search #search google
 import pyjokes #jokes
+import winshell #empty recycle bin
+import pyowm # weather
+import smtplib #send email
+import time as ti # to stop the virtual assistant from listening
 
 # global top
 # top = Tk()
@@ -20,8 +27,6 @@ w = webbrowser.get('chrome')
 r = sr.Recognizer()
 
 global name
-# global greeting
-# greeting=["good morning","good afternoon","good evening","good night"]
 
 # Accessing your microphone to listen to your request
 my_mic = sr.Microphone()
@@ -31,27 +36,23 @@ def listen():
 	while True :
 		with my_mic as source:
 			print("I am listening")
-			audio=r.listen(source,timeout=3)
+			audio=r.listen(source)
 		try :
 			result = r.recognize_google(audio)
 			print("Recognizing...") 
+			print(result)
+			ts(result)
 		except sr.UnknownValueError:
 			print("Google Speech Recognition did not understand the audio")
 		except sr.RequestError as e:
 			print("Request Failed; {0}".format(e))
 
-			# if "goodbye" in result:
-			# 	listening == False
-			# else :
-		ts(result)
-
-# Finds results for your query
+# Finds results for your query 
+# The main function
 def ts(result1):
 	global name,greeting,engine
 	result1 = result1.lower()
-	# if result1 in greeting:
-	# 	engine.say()
-	# 	engine.runAndWait()
+
 	if "hello" in result1 :
 		wishme()
 
@@ -127,8 +128,7 @@ def ts(result1):
 		result1 = result1.replace("where is","")
 		location = result1
 		print(location)
-		speak("User asked to locate")
-		speak(location)
+		speak(f"User asked to locate {location}")
 		w.open("https://www.google.com/maps/place/" + location )
 
 	elif "open calculator" in result1 :
@@ -137,16 +137,22 @@ def ts(result1):
 	elif "open notepad" in result1 :
 		subprocess.Popen("C:/Windows/System32/notepad.exe")
 
-	# elif "open camera" in result1 or "why am i single" :
-	# 	subprocess.Popen("C:/Windows/System32/camera.exe")
+	elif "open camera" in result1 or "why am i single" in result1 :
+		speak("Opening Camera")
+		subprocess.run("start microsoft.windows.camera:", shell =True)
 
 	elif "open steam" in result1 :
 		speak("Opening Steam")
 		os.startfile("D:/Games/Steam/steam.exe")
 
-	elif "instructions" in result1:
+	elif "instructions" in result1 or "instruction" in result1 :
 		speak("Opening instructions")
 		os.startfile("instructions.txt")
+
+	elif "empty recycle bin" in result1:
+		speak("Emptying the recycle bin")
+		winshell.recycle_bin().empty(confirm=True,show_progress=True,sound=False)
+		speak("The recycle bin is empty")
 
 	elif "my microphones" in result1 or "my micrphone" in result1 :
 		speak("Here are the list of microphones")
@@ -155,11 +161,55 @@ def ts(result1):
 	elif "jokes" in result1 or "joke" in result1 :
 		speak(pyjokes.get_joke())
 
-	elif "dont listen" in result1 or "stop listening" in result1:
-		speak("For how long do you want me to stop listening")
-		a= int(listen())
-		time.sleep(a)
-		print(a)
+	elif "what is todays weather" in result1 or "weather" in result1 :
+		speak("Weather of which place")
+		location = l()
+		speak("Getting weather for ")
+		speak(location)
+
+		api_key = '32 digit code'
+		openmap = pyowm.OWM(api_key)
+		wm = openmap.weather_manager()
+		lo = wm.weather_at_place(location)
+		data = lo.weather
+
+		speak("the weather is printed on the cmd")
+
+		speak("Do you want me to read out the weather")
+		x = l()
+
+		temp = data.temperature(unit = "celsius")
+		rt=time()
+		s=data.status
+		ds = data.detailed_status
+
+		print("The current time is :", rt)
+		print("The temperature currently is : ", temp['temp'])
+		print("Will there be clouds :", s)
+		print("Will there be clouds :", ds)
+
+		if x=="yes" :
+			speak(f"The current weather report at time {rt} is")
+			speak(f"temperature {temp['temp']}")
+			speak(f"status {s}")
+			speak(f"detailed status {ds}")
+
+	elif "send mail" in result1 or "send email" in result1:
+		try:
+			speak("What should i send?")
+			content = l()
+			speak("please write the email address i need to send this to on the cmd")
+			to= input("Enter email address :")
+			send_mail(to,content)
+			speak("Email has been sent !")
+		except Exception as e:
+			print(e)
+			speak("Could not send email")
+
+	elif "don't listen" in result1 or "stop listening" in result1 or "send a mail" in result1:
+		speak("For how many seconds do you want me to stop listening")
+		a = int(l())
+		ti.sleep(a)
 
 	elif "exit" in result1 or "goodbye" in result1 or "bye" in result1 or "good night" in result1:
 		speak("see ya later")
@@ -170,7 +220,7 @@ def ts(result1):
 		subprocess.call('shutdown/p/f')
 
 	# for fun
-
+	# Most asked questions from google assistant
 	elif "will you be my girlfriend" in result1 or "will you be my gf" in result1 :
 		speak("hmmmmmmmmmmmmmmmm I'll need some time")
 
@@ -186,6 +236,23 @@ def ts(result1):
 	elif "contact your maker" in result1 or "contact eshan" in result1 or "who is eshan" in result1:
 		speak("Here are all the ways to contact my owner")
 		w.open("https://github.com/eshannaik")
+
+def l():
+	with my_mic as s:
+			print("I am listening")
+			au=r.listen(s)
+	try :
+		query = r.recognize_google(au)
+		print("Recognizing...") 
+		print(query)
+	except sr.UnknownValueError:
+		print("Google Speech Recognition did not understand the audio")
+	except sr.RequestError as e:
+		print("Request Failed; {0}".format(e))
+
+	return query
+
+
 
 # A greeting
 def greeting():
@@ -234,6 +301,17 @@ def microphone_list():
 def search_google(query):
 	for j in search(query, tld="co.in", num=10, stop=10, pause=2):
 		print(j)
+
+# Enable low security in gmail
+def send_mail(to,content):
+	server = smtplib.SMTP('smtp.gmail.com',587)
+	server.ehlo()
+	server.starttls()
+
+	server.login("abc@gmail.com","Password@123")
+	server.sendmail("abc@gmail.com",to,content)
+	server.close()
+
 
 greeting()
 
