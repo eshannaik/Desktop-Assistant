@@ -1,1 +1,7 @@
+To get your API key for the weather go to https://openweathermap.org/ and create an account.
+Click on API on the top navigation bar.
+Click API doc for Current Weather Data.
+Click API key under by city name in the first box to get the API key.
 
+To get your API key for news go to https://newsapi.org/ and click get API key.
+Regsiter and you will get the api key.
