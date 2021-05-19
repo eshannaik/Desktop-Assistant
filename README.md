@@ -1,7 +1,7 @@
 # Desktop-Assistant
 
 #### The purpose of this project is to make a Desktop Assistant that can help a person while on his/her computer.
-#### The name of the assistant is violet.
+#### The name of the assistant is Violet.
 #### Please change any of the file paths based on your system when downloading this project.
 #### To run this program open your console and run using "python assistant.py"
 
