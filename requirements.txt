@@ -1,0 +1,8 @@
+pip install SpeechRecognition
+pip install pyttsx3
+pip install tk
+pip install DateTime
+pip install google
+pip install pyjokes
+pip install winshell
+pip install pyowm 
