@@ -22,6 +22,7 @@ ________________________________________________________________________________
     time
     urllib
     json
+    playsound
 
 ________________________________________________________________________________________________________________________________________________
 #### The features of this assistant are (please say any sentence containing the respective keywords for the feature you are looking for) -
@@ -38,6 +39,7 @@ ________________________________________________________________________________
     Send a mail.
     Tell the current weather report for any place on the planet.
     Hows the top news from Times of India.
+    Can set an alarm.
     Lists out the microphones that your system has.
     You can also stop the virtual assistant from listening for a certain period of time.
     You can shutdown your system using the assistant.
