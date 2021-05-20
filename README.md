@@ -25,7 +25,7 @@ ________________________________________________________________________________
     playsound
 
 ________________________________________________________________________________________________________________________________________________
-#### The features of this assistant are (please refer the instruction.txt file to learn how to use these features) -
+#### The features of this assistant are -
     You can also view these instructions from the virtual assistant by saying "instructions".
     To contact me by saying "contact your maker".
     Time
