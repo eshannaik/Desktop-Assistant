@@ -218,7 +218,7 @@ def ts(result1):
 			speak("Could not send email")
 
 	elif "news" in result1:
-		jsonObj = urlopen('https://newsapi.org/v1/articles?source=the-times-of-india&sortBy=top&apiKey=fc80999b95fc479c9ddf006f4d852d11')
+		jsonObj = urlopen('https://newsapi.org/v1/articles?source=the-times-of-india&sortBy=top&apiKey=YOUR API KEY')
 		data = json.load(jsonObj)
 		i=1
 
