@@ -46,7 +46,7 @@ ________________________________________________________________________________
     The project can also give you the top 10 urls of a google search.
     To close the assistant say "exit".
 #### To see how to use these features please refer to the instructions.txt file.
-
+#### To get the API keys please refer to the api.txt file.
 __________________________________________________________________________________________________________________________________________________
 #### More features will be added with time.
 
