@@ -1,6 +1,7 @@
 INSTRUCTIONS
 
 Please wait for the "Im listening" in the cmd before talking.
+Please get the required API keys to get the news and weather.(instructions in the api.txt file)
 
 It can tell current time and date by saying "time" and "date" respectively.
 Responds to a few messages like "how are you","hello", "who are you",etc.
@@ -11,6 +12,7 @@ Can tell a joke by saying "joke" or "jokes".
 You can open camera by saying "open camera.
 Can empty recycle bin by saying "empty recycle bin".
 Check weather by saying "what is todays weather" or "weather".(please add your API key at line 170)
+To set an alarm you can say "alarm".
 Send a mail by saying "send mail". (Please change line 311 to your mail address)
 To get the top news from times of india say "news".
 Lists out the microphones that your system has by saying "my microphones".
