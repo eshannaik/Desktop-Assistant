@@ -7,3 +7,4 @@ pip install pyjokes
 pip install winshell
 pip install pyowm 
 pip install urllib3
+pip install playsound
