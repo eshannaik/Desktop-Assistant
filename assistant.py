@@ -17,6 +17,7 @@ import smtplib #send email
 import time as ti # to stop the virtual assistant from listening
 from urllib.request import urlopen #for news
 import json
+from playsound import playsound #alarm
 
 # global top
 # top = Tk()
@@ -126,6 +127,14 @@ def ts(result1):
 		speak("Opening Wikipedia")
 		w.open("wikipedia.com")
 
+	elif "open reddit" in result1:
+		speak("Opening Reddit")
+		w.open("reddit.com")
+
+	elif "open twitter" in result1:
+		speak("Opening Twitter")
+		w.open("twitter.com")
+
 	elif "where is" in result1 :
 		result1 = result1.replace("where is","")
 		location = result1
@@ -223,11 +232,27 @@ def ts(result1):
 			for item in data['articles']:
 				print(str(i) + '. ' + item['title'] + '\n')
 				print(item['description'] + '\n')
-				if x == "yes"
-					speak(str(i) + '. ' + item['title'] + '\n')
 				i += 1
 		except Exception as e:
 			print(str(e))
+
+	elif "alarm" in result1:
+		speak("do you want to set the alarm soon (yes or no)")
+		x = l()
+
+		if x == "yes":
+			speak("In how many seconds do you want the alarm to ring")
+			a=int(l())
+			ti.sleep(a)
+			playsound("alarm_beep.mp3")
+		else :
+			speak("please input when you want to set the alarm")
+			x1 = input("Enter time in Hour(24):Minute format")
+
+			while True:
+				standard_time = datetime.now().strftime("%H:%M")
+				if x1 == standard_time:
+					playsound("alarm_beep.mp3") 
 			
 
 	elif "don't listen" in result1 or "stop listening" in result1 or "send a mail" in result1:
