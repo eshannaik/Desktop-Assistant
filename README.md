@@ -25,7 +25,7 @@ ________________________________________________________________________________
     playsound
 
 ________________________________________________________________________________________________________________________________________________
-#### The features of this assistant are (please say any sentence containing the respective keywords for the feature you are looking for) -
+#### The features of this assistant are (please refer the instruction.txt file to learn how to use these features) -
     You can also view these instructions from the virtual assistant by saying "instructions".
     To contact me by saying "contact your maker".
     Time
