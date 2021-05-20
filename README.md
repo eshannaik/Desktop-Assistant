@@ -31,7 +31,7 @@ ________________________________________________________________________________
     Time
     Date
     Respond to basic messages
-    Opens google,youtube,spotify,whatsapp web,facebook,quora,stackoverflow,wikipedia,pinterest.
+    Opens google,youtube,spotify,whatsapp web,facebook,quora,stackoverflow,wikipedia,pinterest,reddit,twitter.
     Finds the location of a place using google maps.
     Can open calculator,notepad,camera and steam.
     Can tell a joke.
@@ -45,7 +45,7 @@ ________________________________________________________________________________
     You can shutdown your system using the assistant.
     The project can also give you the top 10 urls of a google search.
     To close the assistant say "exit".
-#### For more detailed instructions check the instruction.txt file.
+#### To see how to use these features please refer to the instructions.txt file.
 
 __________________________________________________________________________________________________________________________________________________
 #### More features will be added with time.
