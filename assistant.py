@@ -248,11 +248,12 @@ def ts(result1):
 		else :
 			speak("please input when you want to set the alarm")
 			x1 = input("Enter time in Hour(24):Minute format")
-
-			while True:
+			f = True
+			while f == True:
 				standard_time = datetime.now().strftime("%H:%M")
 				if x1 == standard_time:
 					playsound("alarm_beep.mp3") 
+					f==Flase
 			
 
 	elif "don't listen" in result1 or "stop listening" in result1 or "send a mail" in result1:
