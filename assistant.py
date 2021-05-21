@@ -19,10 +19,10 @@ from urllib.request import urlopen #for news
 import json
 from playsound import playsound #alarm
 
-# global top
-# top = Tk()
-# top.title("Voice Recognizer")
-# top.config(bg="black")
+
+
+
+#Please change path to your browser
 
 chrome_path="C:/Program Files/Google/Chrome/Application/chrome.exe"
 webbrowser.register('chrome', None,webbrowser.BackgroundBrowser(chrome_path))
@@ -363,20 +363,3 @@ def send_mail(to,content):
 
 
 greeting()
-
-# def listm():
-# 	global l
-# 	l = Tk()
-# 	l.title("List of microphones in the device")
-
-# 	t = Text(l)
-# 	for index, name in enumerate(sr.Microphone.list_microphone_names()):
-# 	    t.insert("Microphone with name \"{1}\" found for `Microphone(device_index={0})`".format(index, name))
-
-# 	l.mainloop()
-
-
-# bl = Button(top,text="List of microphones in the device",command = listm)
-# bl.pack()
-
-# top.mainloop()
