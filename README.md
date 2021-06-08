@@ -4,7 +4,8 @@
 #### The name of the assistant is Violet.
 #### Please change any of the file paths based on your system when downloading this project.
 #### To run this program open your console and run using "python assistant.py"
-#### To get all the essentail librabries that are needed to run this program check the requirements.txt file.
+#### To get all the essentail librabries that are needed to run this program then run
+        pip install -r requirements.txt
 #### All wev pages are opened on Google Chrome.
 ____________________________________________________________________________________________________________________________________________
 #### The librabries used are -
